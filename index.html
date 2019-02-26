@@ -1,1 +1,348 @@
-Hello World
+<html>
+    <head>
+        <title></title>
+         
+    </head>
+<body> 
+<!-- our form -->  
+<br>
+<center>
+<form id='flightdata'>
+    <div>Flights:  &nbsp; <input type='text' name='flight' placeholder='Flight Number' /> Or 
+    <input name='reg' list="reg" placeholder='Registration'>
+    <datalist id="reg">
+      <option value="7T-VUM">
+      <option value="7T-VUQ">
+      <option value="7T-VUO">
+      <option value="7T-VUV">
+      <option value="7T-VUK">
+      <option value="7T-VVQ">
+      <option value="7T-VUW">
+      <option value="7T-VUI">
+      <option value="7T-VUL">
+      <option value="7T-VUN">
+      <option value="7T-VUS">
+      <option value="7T-VVR">
+      <option value="7T-VHL">
+      <option value="7T_VKK">
+      <option value="7T-VJV">
+      <option value="7T-VJT">
+      <option value="7T_VJW">
+      <option value="7T-VJC">
+      <option value="7T-VJK">
+      <option value="7T_VJP">
+      <option value="7T-VJG">
+      <option value="7T_VKN">
+      <option value="7T_VKF">
+      <option value="7T-VJU">
+      <option value="7T-VJN">
+      <option value="7T_VKG">
+      <option value="7T_VKE">
+      <option value="7T_VJY">
+      <option value="7T-VJQ">
+      <option value="7T-VJA">
+      <option value="7T_VKA">
+      <option value="7T_VKQ">
+      <option value="7T_VKM">
+      <option value="7T_VKD">
+      <option value="7T-VKT">
+      <option value="7T_VJO">
+      <option value="7T_VKL">
+      <option value="7T_VKR">
+      <option value="7T_VKB">
+      <option value="7T-VJS">
+      <option value="7T_VKJ">
+      <option value="7T-VJR">
+      <option value="7T-VJL">
+      <option value="7T-VKS">
+      <option value="7T_VKP">
+      <option value="7T_VKO">
+      <option value="7T_VKC">
+      <option value="7T_VKH">
+    </datalist>
+
+    <input type='submit' width="70" value='            Find        ' />
+    <input type="reset"></div>
+</form>
+<form id='jetplan'>
+    <div>Show last <input type='number' width="10" style="width: 3em"  name='last' placeholder='1' />  Jetplan(s) for: &nbsp;  <input type='text' name='callsign' placeholder='Flight Number'  required="true" /> 
+    <input type='submit' width="70" value='            Find        ' />
+    <input type="reset"></div>
+</form>
+<form id='details'>
+    <div>Show details for: &nbsp;  <input type='text' name='flight' placeholder='Flight Number'  required="true" /> 
+    <input type='submit' width="70" value='            Find        ' />
+    <input type="reset"></div>
+</form>
+<form id='logbook'>
+    <div>Logbook entries between: &nbsp;  <input type='date' name='debut' placeholder='Date début'  required="true" value="2018-12-01" /> and <input type='date' name='fin' placeholder='Date fin'  required="true" value="2018-12-31" /> for
+    <input type='text' name='name' placeholder='Nom'  required="true" />  
+
+    <input type='submit' width="70" value='            Find        ' />
+    <input type="reset"></div>
+</form>
+<form id='block'>
+    <div>Show block time for flight from: &nbsp; <input name='from' list="from" placeholder='Airport' required="true">
+    <datalist id="from">
+     <option value="ALG">
+      <option value="CDG">
+      <option value="ORY">
+      <option value="MRS">
+      <option value="LYS">
+      <option value="BLJ">
+      <option value="NCE">
+      <option value="TLS">
+      <option value="CZL">
+      <option value="ORN">
+      <option value="MPL">
+      <option value="LIL">
+      <option value="TLM">
+      <option value="QSF">
+      <option value="BJA">
+      <option value="BSK">
+      <option value="CFK">
+      <option value="AAE">
+      <option value="GJL">
+      <option value="ELU">
+      <option value="MLH">
+      <option value="ETZ">
+      <option value="BOD">
+      <option value="PMI">
+      <option value="ALC">
+      <option value="MAD">
+      <option value="VLC">
+      <option value="BCN">
+      <option value="FCO">
+      <option value="MXP">
+      <option value="VIE">
+      <option value="BUD">
+      <option value="GVA">
+      <option value="LHR">
+      <option value="BRU">
+      <option value="FRA">
+      <option value="VLL">
+      <option value="AGP">
+      <option value="SVQ">
+      <option value="PNA">
+      <option value="ZAZ">
+      <option value="BIO">
+      <option value="YUL">
+      <option value="SVO">
+      <option value="LIS">
+      <option value="IST">
+      <option value="AYT">
+      <option value="PEK">
+      <option value="TUN">
+      <option value="CMN">
+      <option value="NKC">
+      <option value="BEY">
+      <option value="CAI">
+      <option value="DXB">
+      <option value="AMM">
+      <option value="DJE">
+      <option value="SSH">
+      <option value="DSS">
+      <option value="ABJ">
+      <option value="BKO">
+      <option value="OUA">
+      <option value="NIM">
+      <option value="TEE">
+      <option value="LOO">
+      <option value="CBH">
+      <option value="AZR">
+      <option value="TIN">
+      <option value="TMX">
+      <option value="GHA">
+      <option value="OGX">
+      <option value="HME">
+      <option value="IAM">
+      <option value="TMR">
+      <option value="DJG">
+      <option value="TGR">
+      <option value="INZ">
+      <option value="VVZ">
+      <option value="ELG">
+      <option value="BMW">
+      <option value="MED">
+      <option value="JED">
+    </datalist>
+   to <input name='to' list="to" placeholder='Airport' required="true">
+    <datalist id="to">
+     <option value="ALG">
+      <option value="CDG">
+      <option value="ORY">
+      <option value="MRS">
+      <option value="LYS">
+      <option value="BLJ">
+      <option value="NCE">
+      <option value="TLS">
+      <option value="CZL">
+      <option value="ORN">
+      <option value="MPL">
+      <option value="LIL">
+      <option value="TLM">
+      <option value="QSF">
+      <option value="BJA">
+      <option value="BSK">
+      <option value="CFK">
+      <option value="AAE">
+      <option value="GJL">
+      <option value="ELU">
+      <option value="MLH">
+      <option value="ETZ">
+      <option value="BOD">
+      <option value="PMI">
+      <option value="ALC">
+      <option value="MAD">
+      <option value="VLC">
+      <option value="BCN">
+      <option value="FCO">
+      <option value="MXP">
+      <option value="VIE">
+      <option value="BUD">
+      <option value="GVA">
+      <option value="LHR">
+      <option value="BRU">
+      <option value="FRA">
+      <option value="VLL">
+      <option value="AGP">
+      <option value="SVQ">
+      <option value="PNA">
+      <option value="ZAZ">
+      <option value="BIO">
+      <option value="YUL">
+      <option value="SVO">
+      <option value="LIS">
+      <option value="IST">
+      <option value="AYT">
+      <option value="PEK">
+      <option value="TUN">
+      <option value="CMN">
+      <option value="NKC">
+      <option value="BEY">
+      <option value="CAI">
+      <option value="DXB">
+      <option value="AMM">
+      <option value="DJE">
+      <option value="SSH">
+      <option value="DSS">
+      <option value="ABJ">
+      <option value="BKO">
+      <option value="OUA">
+      <option value="NIM">
+      <option value="TEE">
+      <option value="LOO">
+      <option value="CBH">
+      <option value="AZR">
+      <option value="TIN">
+      <option value="TMX">
+      <option value="GHA">
+      <option value="OGX">
+      <option value="HME">
+      <option value="IAM">
+      <option value="TMR">
+      <option value="DJG">
+      <option value="TGR">
+      <option value="INZ">
+      <option value="VVZ">
+      <option value="ELG">
+      <option value="BMW">
+      <option value="MED">
+      <option value="JED">
+    </datalist>
+    <input type='submit' width="70" value='            Find        ' />
+    <input type="reset"></div>
+</form>
+ </center>
+
+<!-- where the response will be displayed -->
+<div id='response'></div>
+ 
+<script src="jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('#flightdata').submit(function(){
+        $('#response').html("<b>Loading response...</b>");
+        $.ajax({
+            type: 'POST',
+            url: 'finder.php', 
+            data: $(this).serialize()
+        })
+        .done(function(data){
+            $('#response').html(data);
+             
+        })
+        .fail(function() {
+            alert( "Posting failed." );  
+        });
+        return false;
+    });
+    $('#jetplan').submit(function(){
+        $('#response').html("<b>Loading your Jetplan...</b>");
+        $.ajax({
+            type: 'POST',
+            url: 'jetplan.php', 
+            data: $(this).serialize()
+        })
+        .done(function(data){
+            $('#response').html(data);
+             
+        })
+        .fail(function() {
+            alert( "Posting failed." );  
+        });
+        return false;
+    });
+    $('#details').submit(function(){
+        $('#response').html("<b>Loading your flight details...</b>");
+        $.ajax({
+            type: 'POST',
+            url: 'flight_number.php', 
+            data: $(this).serialize()
+        })
+        .done(function(data){
+            $('#response').html(data);
+             
+        })
+        .fail(function() {
+            alert( "Posting failed." );  
+        });
+        return false;
+    });
+    $('#block').submit(function(){
+        $('#response').html("<b>Loading your flight details...</b>");
+        $.ajax({
+            type: 'POST',
+            url: 'flight_number.php', 
+            data: $(this).serialize()
+        })
+        .done(function(data){
+            $('#response').html(data);
+             
+        })
+        .fail(function() {
+            alert( "Posting failed." );  
+        });
+        return false;
+    });
+    $('#logbook').submit(function(){
+        $('#response').html("<b>Loading your logbook entries...</b>");
+        $.ajax({
+            type: 'POST',
+            url: 'logbook.php', 
+            data: $(this).serialize()
+        })
+        .done(function(data){
+            $('#response').html(data);
+             
+        })
+        .fail(function() {
+            alert( "Posting failed." );  
+        });
+        return false;
+    });
+});
+</script>
+ 
+</body>
+</html>
