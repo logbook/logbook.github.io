@@ -251,7 +251,7 @@ function pwd_handler(form)
   <script src="js/clean-blog.min.js"></script>
   <script type="text/javascript">
     $(document).ready(function(){
-      introJs().start();
+      
 
         $('#service').change(function(){
         var id=$('#service option:selected').attr('id');
@@ -333,11 +333,11 @@ c_value = unescape(c_value.substring(c_start,c_end));
 return c_value;
 }
 function checkCookieIntro(){
-   var cookie=getCookie("mySite");
+   var cookie=getCookie("logbook");
 
    if (cookie==null || cookie=="") {
-      setCookie("mySite", "1",90);
-      runIntro();  //change this to whatever function you need to call to run the intro
+      setCookie("logbook", "1",90);
+      introJs().start();
       }
 }
 
