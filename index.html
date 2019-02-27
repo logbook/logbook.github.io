@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/intro.js"></script>
 
   <title>AH Logbook Entries</title>
 
@@ -21,6 +22,7 @@
 
   <!-- Custom styles for this template -->
   <link href="css/clean-blog.min.css" rel="stylesheet">
+  <link href="css/introjs.css" rel="stylesheet">
 <style type="text/css">
   .initials{
     display:ok;
@@ -41,12 +43,12 @@ function pwd_handler(form)
 </script>
 </head>
 
-<body style="font-family: 'Montserrat'">
+<body style="font-family: 'Montserrat'" onload="checkCookieIntro()">
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand" href="index.html">AH Logbook Entries</a>
+      <a class="navbar-brand" data-intro="Welcome to AH Logbook Entries Tool!" href="index.html">AH Logbook Entries</a>
     </div>
   </nav>
 
@@ -61,16 +63,16 @@ function pwd_handler(form)
               <div class="form-inline text-center justify-content-center" style="padding-bottom:6px">
               <div class="form-group">
                 <label for="crewid">Crew ID:</label>&nbsp;
-                <input type="text" placeholder="E-crew Login" style="width: 145px" class="form-control input-sm" id="crewid" name="crewid" required="required">
+                <input data-step="2" data-intro="You can login now using your E-Crew credentials." type="text" placeholder="E-crew Login" style="width: 145px" class="form-control input-sm" id="crewid" name="crewid" required="required">
               </div>&nbsp;&nbsp;
               <div class="form-group">
                 <label for="pwd">Password:</label>&nbsp;
-                <input type="password" placeholder="E-crew Password" style="width: 145px" class="form-control" id="pwd" name="pwd" required="required">
+                <input type="password" data-step="3" data-intro="And your E-Crew password." placeholder="E-crew Password" style="width: 145px" class="form-control" id="pwd" name="pwd" required="required">
                <input type="hidden" name="md5pwd" value="" />
               </div>&nbsp;&nbsp;
               <div class="form-group">
                 <label for="month">Month:</label>&nbsp;
-                <select class="form-control" id="month" name="month">
+                <select data-step="4" data-intro="Then select the requested month" class="form-control" id="month" name="month">
                   <option>JAN</option>
                   <option>FEB</option>
                   <option>MAR</option>
@@ -87,7 +89,7 @@ function pwd_handler(form)
               </div>&nbsp;&nbsp;
             <div class="form-group">
                 <label for="year">YEAR:</label>&nbsp;
-                <select class="form-control" id="year" name="year">
+                <select data-step="5" data-intro="And of course the year" class="form-control" id="year" name="year">
                   <option>2019</option>
                   <option>2018</option>
                   <option>2017</option>
@@ -109,22 +111,22 @@ function pwd_handler(form)
             <div style="clear: both"></div>
             <div class="form-group">
                 <label for="service">Service:</label>&nbsp;
-                <select class="form-control" id="service" name="service">
+                <select data-step="6" data-intro="You can also select which operation you want to perform. Service Paie is in a trial phase for now." class="form-control" id="service" name="service">
                   <option id="0">LogBook</option>
                   <option id="1">Paie</option>
                 </select>
             </div>&nbsp;&nbsp;
             <div class="form-group">
                 <label for="manexsun">Sunrise/Senset Manex:</label>&nbsp;
-                <label><input name="manexsun" type="checkbox"> </label>
+                <label><input data-step="7" data-intro="Select whether you'de rather have real sunrise/sunset hours for your day/night hours or the fixed 05:30z/17:30z rule." name="manexsun" type="checkbox"> </label>
 
             </div>&nbsp;&nbsp;
             <div class="form-group">
                 <label for="manexblo">Block Manex:</label>&nbsp;
                 <div class="checkbox">
-                <label><input name="manexblo" type="checkbox"> </label>
+                <label><input data-step="8" data-intro="You can also compute your hours based on Block Manex (last version incorporated)." name="manexblo" type="checkbox"> </label>
               </div>
-            &nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-success ">Submit</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;<button data-step="10" data-intro="You're all set, happy using :)"  type="submit" class="btn btn-success ">Submit</button>
 
             </div>&nbsp;&nbsp;
             <br>
@@ -133,7 +135,7 @@ function pwd_handler(form)
             <div class="form-inline initials text-center justify-content-center" style="padding-bottom:11px" >
             <div style="clear: both"></div>
              <div class="form-group">
-                <label for="crewid">Total:</label>&nbsp;
+                <label data-step="9" data-intro="Optionally. You can introduce your initial totals in order to start counting up from them."  for="crewid">Total:</label>&nbsp;
                 <input type="text" value="00" style="width: 60px" class="form-control input-sm" id="total_h">:
                 <input type="text" value="00" style="width: 45px" class="form-control input-sm" id="total_m">
               </div>&nbsp;&nbsp;
@@ -215,6 +217,14 @@ function pwd_handler(form)
   <!-- Main Content -->
   <div class="container3">
     <div class="response" style="padding-left: 20px; padding-right: 20px;">
+      <h1 style="text-align: center;">Welcome to AH LogBook Entries tool!</h1>
+<p>This tool is meant to help you count your flying hours and fill out your personal loogbook according to the suggested format by DACM. It uses real hours extracted from E-Crew platform as well as Manex sunrise and senset hours alongside with Manex block hours if selected.</p>
+<p>This tool is in it's Alpha version, it relies heavily on your feedback to get it stable, please report back any mulfunctions or bugs in order to improve it. You can always mail me on <a href="mailto:bk_boukraa@esi.dz">bk_boukraa@esi.dz</a>&nbsp;for any further suggestions.</p>
+<p>This tool does not provide any guarantee for the correct totals, so it's suggested to check and crosscheck any output.</p>
+
+<p><small><p>This tool may perform quicker with FOs compared to Captains due to the lack of FOs names on the logbook entries section of E-Crew for Captains (it shows self instead) which triggers an extra process in order to lookup missing names.</p>
+</small></p>
+<p><center><a class="class_name" href="javascript:void(0);" onclick="javascript:introJs().start();">Take me in a tour on this website</a></center></p>
 
     </div>
   </div>
@@ -241,6 +251,8 @@ function pwd_handler(form)
   <script src="js/clean-blog.min.js"></script>
   <script type="text/javascript">
     $(document).ready(function(){
+      introJs().start();
+
         $('#service').change(function(){
         var id=$('#service option:selected').attr('id');
 
@@ -283,6 +295,54 @@ function pwd_handler(form)
 
 
     });
+
+
+
+//set the cookie when they first hit the site
+function setCookie(c_name,value,exdays)
+{
+var exdate=new Date();
+exdate.setDate(exdate.getDate() + exdays);
+var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
+document.cookie=c_name + "=" + c_value;
+}
+
+//check for the cookie when user first arrives, if cookie doesn't exist call the intro.
+function getCookie(c_name)
+{
+var c_value = document.cookie;
+var c_start = c_value.indexOf(" " + c_name + "=");
+if (c_start == -1)
+  {
+  c_start = c_value.indexOf(c_name + "=");
+  }
+if (c_start == -1)
+  {
+  c_value = null;
+  }
+else
+  {
+  c_start = c_value.indexOf("=", c_start) + 1;
+  var c_end = c_value.indexOf(";", c_start);
+  if (c_end == -1)
+  {
+c_end = c_value.length;
+}
+c_value = unescape(c_value.substring(c_start,c_end));
+}
+return c_value;
+}
+function checkCookieIntro(){
+   var cookie=getCookie("mySite");
+
+   if (cookie==null || cookie=="") {
+      setCookie("mySite", "1",90);
+      runIntro();  //change this to whatever function you need to call to run the intro
+      }
+}
+
+
+
 
   </script>
 </body>
