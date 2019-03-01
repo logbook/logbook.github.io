@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/intro.js"></script>
+  <link href='https://jetplan.trial.rocks/libs/fullcalendar.css' rel='stylesheet' />
+
+  <title>AH Permutations</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+  <link href="css/introjs.css" rel="stylesheet">
+<style type="text/css">
+  .initials{
+    display:ok;
+  }
+  .paie{
+    display:none;
+  }
+</style>
+<script type="text/javascript">
+function pwd_handler(form)
+{
+        if (form.pwd.value != '')
+        {
+            form.md5pwd.value = btoa(form.pwd.value);
+            //form.pwd.value = '';
+        }
+}
+</script>
+</head>
+
+<body style="font-family: 'Montserrat'">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" data-intro="Welcome to AH Permutations!" href="index.html">AH Permutations</a>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/logoo.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-18 col-md-12 mx-auto">
+          <div class="site-heading">
+             <form id='logbook' role="form" >
+              <div class="form-inline text-center justify-content-center" style="padding-bottom:6px">
+              <div class="form-group">
+                <label for="id">Pilote 1:</label>&nbsp;
+                <select style="width: 195px" placeholder="Capt or FO" class="form-control" id="id" name="id">
+                  <option value="32245">ALIOUECHE NACIM</option>
+                  <option value="32545">AMIRA  CHAKIB</option>
+                  <option value="32450">ARIFI  OUSSAMA</option>
+                  <option value="32244">AROUA  MOHAMED BILAL</option>
+                  <option value="32243">BELKHAM ADEL</option>
+                  <option value="32105">BENLALAM HICHAM</option>
+                  <option value="26161">BENOUIS MOHAMMED FETHI</option>
+                  <option value="32242">BENSENOUCI  Abdesselam Fawzi</option>
+                  <option value="32241">BENMILOUD AMINE</option>
+                  <option value="32236">BERKANI ALI</option>
+                  <option value="30053">BEZAOUIA Mohamed</option>
+                  <option value="32396">BIDI  MHAMED</option>
+                  <option value="30047">BOUABCHA Samy Chems Eddine</option>
+                  <option value="32235">BOUBEKEUR YACINE</option>
+                  <option value="32460">BOURAS MANSOUR</option>
+                  <option value="32462">BOURRADOU Redouane</option>
+                  <option value="32237">BOUSBAH  Abdelkrim</option>
+                  <option value="32108">BOUTALEB ABDELKADER</option>
+                  <option value="29726">BOUZIDI Lyes</option>
+                  <option value="32240">BOUZIRI FERYAL FIFI</option>
+                  <option value="32452">CHEBOUT  SALIM</option>
+                  <option value="30054">CHERFI Hania</option>
+                  <option value="32400">DAOUD  Mohamed  Amine</option>
+                  <option value="32401">DIAFAT  ABDELKADER</option>
+                  <option value="31790">DJERMANI MOUNIR</option>
+                  <option value="32234">DOUMI YOUSSEF KARIM</option>
+                  <option value="32402">GHOBRINI  Abdelghani</option>
+                  <option value="29314">HAMADI MOHAMMED</option>
+                  <option value="32230">HAMMOUDI KARIM</option>
+                  <option value="30064">KEBACHE Lotfi</option>
+                  <option value="32092">KERMIA YACINE</option>
+                  <option value="30065">KIRECHE Samy</option>
+                  <option value="29791">LACETE Rechad</option>
+                  <option value="22806">LAZIZI Kamel</option>
+                  <option value="25611">LAYAIDA Djahid</option>
+                  <option value="32546">MEDKOUR  EL MOATASSEM</option>
+                  <option value="30068">MEHEL Rafik</option>
+                  <option value="32406">MEHENNI  FERYEL</option>
+                  <option value="32095">METREF MOUNIR</option>
+                  <option value="32468">MEZIANI  MOULOUD</option>
+                  <option value="26779">MOHAMMEDI WALID</option>
+                  <option value="32098">MOUSSAOUI ADEL</option>
+                  <option value="32099">ORIF RACHID</option>
+                  <option value="30070">OULMANE Tewfik</option>
+                  <option value="27070">RAHAL Abdelkader</option>
+                  <option value="32411">RAHAL HADI ANISS</option>
+                  <option value="29714">SEMANI Allel</option>
+                  <option value="23932">TERKI OMAR NABIL</option>
+                  <option value="32415">TRABZI  Mohamed</option>
+                  <option value="22803">ZAGAI Nour Eddine</option>
+                  <option value="36829">ABDELATIF MOHAMED ANIS</option>
+                  <option value="37138">ABDOUALI BRAHIM</option>
+                  <option value="37825">AGGOUN Walid</option>
+                  <option value="36704">AIT OUMEZIANE IDIR ABDELHAKIM</option>
+                  <option value="37824">ALLAOUA Hacene</option>
+                  <option value="37606">AMOURA WALID</option>
+                  <option value="37141">BADAOUI ABDELWAHAB</option>
+                  <option value="36870">BELHADAD AMINE</option>
+                  <option value="37514">BELKHIR  Oussama</option>
+                  <option value="37828">BENABID Samy Adlane</option>
+                  <option value="37670">BENZOUAOUI ISLEM</option>
+                  <option value="35027">BOUDINE MOHAMED</option>
+                  <option value="37459">BOUKACEM Salim</option>
+                  <option value="37607">BOUKRAA   KACEM</option>
+                  <option value="37621">BOURAY ISLAM</option>
+                  <option value="37462">CHABBIA Sofiane</option>
+                  <option value="27353">CHEMMI MOUNIR</option>
+                  <option value="29319">CHENGUEL Zohra</option>
+                  <option value="37827">DOB Abdallah</option>
+                  <option value="37826">HADDAD Messaoud</option>
+                  <option value="37456">HASNAOUI Badreddine</option>
+                  <option value="37619">HERICHE WALID</option>
+                  <option value="37669">IBEROUALENE FODIL</option>
+                  <option value="37517">KARRAB  RADOUANE  Nour el Hak</option>
+                  <option value="31795">KASSA YACINE</option>
+                  <option value="37622">KERDOUD ABDERRAOUF</option>
+                  <option value="37604">LADAYCIA OUSSAMA</option>
+                  <option value="36708">LAMINE DEBAGHINE SID ALI YOUCEF</option>
+                  <option value="37667">LOUHBAIBAT MOHAMED EL AMINE</option>
+                  <option value="36709">LOUNI MOHAMED CHAFIK</option>
+                  <option value="37823">MANSOURI Riadh</option>
+                  <option value="36267">MAZOUZ ABDENOR</option>
+                  <option value="37461">MECHOUMA  Ayoub</option>
+                  <option value="37140">MEDDAH MEHDI</option>
+                  <option value="37139">MERZOUGUI ABDELMALIK</option>
+                  <option value="37605">NAIT SEGHIR MUSTAPHA</option>
+                  <option value="37617">RABEHI YOUNES</option>
+                  <option value="37620">REBIAI ABDERRAHMANE</option>
+                  <option value="35888">ROUIBI ABDELKRIM</option>
+                  <option value="36873">ROUICHEDI YOUNES</option>
+                  <option value="37671">SAICHI NASSIM</option>
+                  <option value="37463">SELLAL  NOUR EL ISLAM</option>
+                  <option value="37608">SLOUGUI ADIL</option>
+                  <option value="37589">TERRANTI MOHAMED</option>
+                  <option value="37603">TOUAHRIA SALAH EDDINE</option>
+                  <option value="36831">TOUATI ANES MOHAMMED WALID</option>
+                  <option value="37668">TOUCHEN ADEL</option>
+                  <option value="37618">YACOUBI FAOUZI</option>
+                  <option value="37666">YAMANI KHALED</option>
+                  <option value="37458">ZEMMOURI Abdesselam Mohamed Sami</option>
+                  <option value="36872">BOUMERDAS  ABDELFETAH</option>
+                  <option value="36830">DJEDAIMI SID AHMED KAMEL</option>
+                  <option value="37464">FERGANI  Souhila</option>
+                  <option value="37515">GUERROUMI  Moussa</option>
+                  <option value="37555">HAMMOU MOHAMMED</option>
+                  <option value="37460">KERBOUB Mohamed El Mahdi</option>
+                  <option value="37148">LABBACI NEZZAR MOHAMED AMINE</option>
+                  <option value="32808">MERABET SOFIANE</option>
+                  <option value="37516">OUITAS  Zakaria</option>
+                  <option value="37457">RAHMANI Alaeddine</option>
+                  <option value="36702">SLIMANI WALID</option>
+                  <option value="36871">SOUIYOU MOUAD</option>
+                </select>
+              </div>&nbsp;&nbsp;
+            <div class="form-group">
+                <label for="id2">Pilote 2:</label>&nbsp;
+                <select  style="width: 195px"  placeholder="Capt or FO" class="form-control" id="id2" name="id2">
+                  <option value="32245">ALIOUECHE NACIM</option>
+                  <option value="32545">AMIRA  CHAKIB</option>
+                  <option value="32450">ARIFI  OUSSAMA</option>
+                  <option value="32244">AROUA  MOHAMED BILAL</option>
+                  <option value="32243">BELKHAM ADEL</option>
+                  <option value="32105">BENLALAM HICHAM</option>
+                  <option value="26161">BENOUIS MOHAMMED FETHI</option>
+                  <option value="32242">BENSENOUCI  Abdesselam Fawzi</option>
+                  <option value="32241">BENMILOUD AMINE</option>
+                  <option value="32236">BERKANI ALI</option>
+                  <option value="30053">BEZAOUIA Mohamed</option>
+                  <option value="32396">BIDI  MHAMED</option>
+                  <option value="30047">BOUABCHA Samy Chems Eddine</option>
+                  <option value="32235">BOUBEKEUR YACINE</option>
+                  <option value="32460">BOURAS MANSOUR</option>
+                  <option value="32462">BOURRADOU Redouane</option>
+                  <option value="32237">BOUSBAH  Abdelkrim</option>
+                  <option value="32108">BOUTALEB ABDELKADER</option>
+                  <option value="29726">BOUZIDI Lyes</option>
+                  <option value="32240">BOUZIRI FERYAL FIFI</option>
+                  <option value="32452">CHEBOUT  SALIM</option>
+                  <option value="30054">CHERFI Hania</option>
+                  <option value="32400">DAOUD  Mohamed  Amine</option>
+                  <option value="32401">DIAFAT  ABDELKADER</option>
+                  <option value="31790">DJERMANI MOUNIR</option>
+                  <option value="32234">DOUMI YOUSSEF KARIM</option>
+                  <option value="32402">GHOBRINI  Abdelghani</option>
+                  <option value="29314">HAMADI MOHAMMED</option>
+                  <option value="32230">HAMMOUDI KARIM</option>
+                  <option value="30064">KEBACHE Lotfi</option>
+                  <option value="32092">KERMIA YACINE</option>
+                  <option value="30065">KIRECHE Samy</option>
+                  <option value="29791">LACETE Rechad</option>
+                  <option value="22806">LAZIZI Kamel</option>
+                  <option value="25611">LAYAIDA Djahid</option>
+                  <option value="32546">MEDKOUR  EL MOATASSEM</option>
+                  <option value="30068">MEHEL Rafik</option>
+                  <option value="32406">MEHENNI  FERYEL</option>
+                  <option value="32095">METREF MOUNIR</option>
+                  <option value="32468">MEZIANI  MOULOUD</option>
+                  <option value="26779">MOHAMMEDI WALID</option>
+                  <option value="32098">MOUSSAOUI ADEL</option>
+                  <option value="32099">ORIF RACHID</option>
+                  <option value="30070">OULMANE Tewfik</option>
+                  <option value="27070">RAHAL Abdelkader</option>
+                  <option value="32411">RAHAL HADI ANISS</option>
+                  <option value="29714">SEMANI Allel</option>
+                  <option value="23932">TERKI OMAR NABIL</option>
+                  <option value="32415">TRABZI  Mohamed</option>
+                  <option value="22803">ZAGAI Nour Eddine</option>
+                  <option value="36829">ABDELATIF MOHAMED ANIS</option>
+                  <option value="37138">ABDOUALI BRAHIM</option>
+                  <option value="37825">AGGOUN Walid</option>
+                  <option value="36704">AIT OUMEZIANE IDIR ABDELHAKIM</option>
+                  <option value="37824">ALLAOUA Hacene</option>
+                  <option value="37606">AMOURA WALID</option>
+                  <option value="37141">BADAOUI ABDELWAHAB</option>
+                  <option value="36870">BELHADAD AMINE</option>
+                  <option value="37514">BELKHIR  Oussama</option>
+                  <option value="37828">BENABID Samy Adlane</option>
+                  <option value="37670">BENZOUAOUI ISLEM</option>
+                  <option value="35027">BOUDINE MOHAMED</option>
+                  <option value="37459">BOUKACEM Salim</option>
+                  <option value="37607">BOUKRAA   KACEM</option>
+                  <option value="37621">BOURAY ISLAM</option>
+                  <option value="37462">CHABBIA Sofiane</option>
+                  <option value="27353">CHEMMI MOUNIR</option>
+                  <option value="29319">CHENGUEL Zohra</option>
+                  <option value="37827">DOB Abdallah</option>
+                  <option value="37826">HADDAD Messaoud</option>
+                  <option value="37456">HASNAOUI Badreddine</option>
+                  <option value="37619">HERICHE WALID</option>
+                  <option value="37669">IBEROUALENE FODIL</option>
+                  <option value="37517">KARRAB  RADOUANE  Nour el Hak</option>
+                  <option value="31795">KASSA YACINE</option>
+                  <option value="37622">KERDOUD ABDERRAOUF</option>
+                  <option value="37604">LADAYCIA OUSSAMA</option>
+                  <option value="36708">LAMINE DEBAGHINE SID ALI YOUCEF</option>
+                  <option value="37667">LOUHBAIBAT MOHAMED EL AMINE</option>
+                  <option value="36709">LOUNI MOHAMED CHAFIK</option>
+                  <option value="37823">MANSOURI Riadh</option>
+                  <option value="36267">MAZOUZ ABDENOR</option>
+                  <option value="37461">MECHOUMA  Ayoub</option>
+                  <option value="37140">MEDDAH MEHDI</option>
+                  <option value="37139">MERZOUGUI ABDELMALIK</option>
+                  <option value="37605">NAIT SEGHIR MUSTAPHA</option>
+                  <option value="37617">RABEHI YOUNES</option>
+                  <option value="37620">REBIAI ABDERRAHMANE</option>
+                  <option value="35888">ROUIBI ABDELKRIM</option>
+                  <option value="36873">ROUICHEDI YOUNES</option>
+                  <option value="37671">SAICHI NASSIM</option>
+                  <option value="37463">SELLAL  NOUR EL ISLAM</option>
+                  <option value="37608">SLOUGUI ADIL</option>
+                  <option value="37589">TERRANTI MOHAMED</option>
+                  <option value="37603">TOUAHRIA SALAH EDDINE</option>
+                  <option value="36831">TOUATI ANES MOHAMMED WALID</option>
+                  <option value="37668">TOUCHEN ADEL</option>
+                  <option value="37618">YACOUBI FAOUZI</option>
+                  <option value="37666">YAMANI KHALED</option>
+                  <option value="37458">ZEMMOURI Abdesselam Mohamed Sami</option>
+                  <option value="36872">BOUMERDAS  ABDELFETAH</option>
+                  <option value="36830">DJEDAIMI SID AHMED KAMEL</option>
+                  <option value="37464">FERGANI  Souhila</option>
+                  <option value="37515">GUERROUMI  Moussa</option>
+                  <option value="37555">HAMMOU MOHAMMED</option>
+                  <option value="37460">KERBOUB Mohamed El Mahdi</option>
+                  <option value="37148">LABBACI NEZZAR MOHAMED AMINE</option>
+                  <option value="32808">MERABET SOFIANE</option>
+                  <option value="37516">OUITAS  Zakaria</option>
+                  <option value="37457">RAHMANI Alaeddine</option>
+                  <option value="36702">SLIMANI WALID</option>
+                  <option value="36871">SOUIYOU MOUAD</option>
+                </select>
+              </div>&nbsp;&nbsp;
+               <div class="form-group">
+                <label for="crewid">Date:</label>&nbsp;
+                <input type="date" id="date" name="date" value="<?php echo date('Y-m-d'); ?>" placeholder="Date" style="width: 195px" class="form-control input-sm" required="required">
+              </div>&nbsp;&nbsp;
+                          &nbsp;&nbsp;&nbsp;&nbsp;<button data-step="10" data-intro="You're all set, happy using :)"  type="submit" class="btn btn-success ">Submit</button>
+
+            <br>
+            </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container3">
+    <div class="response" style="padding-left: 20px; padding-right: 20px;">
+     
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+
+          <p class="copyright text-muted">Data extracted from E-Crew platform, this service does not store any data or credentials. Use on your responsibility. By Kacem BOUKRAA</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src='https://jetplan.trial.rocks/libs/lib/moment.min.js'></script>
+
+<script src='https://jetplan.trial.rocks/libs/now-ui-dashboard.min.js'></script>
+<script src='https://jetplan.trial.rocks/libs/fullcalendar.js'></script>
+<script src='https://jetplan.trial.rocks/libs/scheduler.js'></script>
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      const element = document.getElementById('date');
+      element.valueAsNumber = Date.now()-(new Date()).getTimezoneOffset()*60000;
+      $('#logbook').submit(function(){
+            $('.response').html("<h2><center>Loading requested data...</b></center></h2><small><center>This may take up to two minutes in some cases, please be patient.</center></small>");
+            if ($('.pwd').value != '')
+            {
+                $('.md5pwd').value = encodeURIComponent(window.btoa($('.pwd').value));
+                //$('.pwd').value = '';
+            }
+            $.ajax({
+
+                type: 'POST',
+                url: 'https://jetplan.trial.rocks/leave-2.php', 
+                data: $(this).find(':not(input[name=pwd])').serialize()
+            })
+            .done(function(data){
+                $('.response').html(data);
+                 
+            })
+            .fail(function() {
+                alert( "Posting failed." );  
+            });
+            return false;
+        });
+
+
+
+    });
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>
