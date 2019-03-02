@@ -117,6 +117,11 @@ function pwd_handler(form)
                 </select>
             </div>&nbsp;&nbsp;
             <div class="form-group">
+                <label for="pilotsnames">Include Pilots names:</label>&nbsp;
+                <label><input data-step="9" data-intro="Do you want to fetch pilots names? this may slow down the process for Captains." name="pilotsnames" type="checkbox"> </label>
+
+            </div>&nbsp;&nbsp;
+            <div class="form-group">
                 <label for="manexsun">Sunrise/Senset Manex:</label>&nbsp;
                 <label><input data-step="7" data-intro="Select whether you'de rather have real sunrise/sunset hours for your day/night hours or the fixed 05:30z/17:30z rule." name="manexsun" type="checkbox"> </label>
 
@@ -126,7 +131,7 @@ function pwd_handler(form)
                 <div class="checkbox">
                 <label><input data-step="8" data-intro="You can also compute your hours based on Block Manex (last version incorporated)." name="manexblo" type="checkbox"> </label>
               </div>
-            &nbsp;&nbsp;&nbsp;&nbsp;<button data-step="10" data-intro="You're all set, happy using :)"  type="submit" class="btn btn-success ">Submit</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;<button data-step="11" data-intro="You're all set, happy using :)"  type="submit" class="btn btn-success ">Submit</button>
 
             </div>&nbsp;&nbsp;
             <br>
@@ -135,7 +140,7 @@ function pwd_handler(form)
             <div class="form-inline initials text-center justify-content-center" style="padding-bottom:11px" >
             <div style="clear: both"></div>
              <div class="form-group">
-                <label data-step="9" data-intro="Optionally. You can introduce your initial totals in order to start counting up from them."  for="crewid">Total:</label>&nbsp;
+                <label data-step="10" data-intro="Optionally. You can introduce your initial totals in order to start counting up from them."  for="crewid">Total:</label>&nbsp;
                 <input type="text" value="00" style="width: 60px" class="form-control input-sm" name="total_h">:
                 <input type="text" value="00" style="width: 45px" class="form-control input-sm" name="total_m">
               </div>&nbsp;&nbsp;
