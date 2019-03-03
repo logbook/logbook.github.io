@@ -77,12 +77,23 @@ function pwd_handler(form)
 			<div class="form-inline text-center justify-content-center" style="padding-bottom:6px">
               <div class="form-group">
                 <label for="month">Start Date:</label>&nbsp;
-                <input type="date" id="date" name="date" value="" placeholder="Start Date" style="width: 250px" class="form-control input-sm" required="required">
+                <input type="date" id="date" name="date" value="" placeholder="Start Date" style="width: 200px" class="form-control input-sm" required="required">
               </div>&nbsp;&nbsp;
               <div class="form-group">
                 <label for="month">End Date:</label>&nbsp;
-                <input type="date" id="date2" name="date2" value="" placeholder="End Date" style="width: 250px" class="form-control input-sm" required="required">
+                <input type="date" id="date2" name="date2" value="" placeholder="End Date" style="width: 200px" class="form-control input-sm" required="required">
               </div>&nbsp;&nbsp;
+              <div class="form-group">
+                <label for="manexsun">Sunrise/Senset Manex:</label>&nbsp;
+                <label><input data-step="7" data-intro="Select whether you'de rather have real sunrise/sunset hours for your day/night hours or the fixed 05:30z/17:30z rule." name="manexsun" type="checkbox"> </label>
+
+            </div>&nbsp;&nbsp;
+            <div class="form-group">
+                <label for="manexblo">Block Manex:</label>&nbsp;
+                <div class="checkbox">
+                <label><input data-step="8" data-intro="You can also compute your hours based on Block Manex (last version incorporated)." name="manexblo" type="checkbox"> </label>
+              </div>
+            </div>&nbsp;&nbsp;
               <button data-step="11" data-intro="You're all set, happy using :)"  type="submit" class="btn btn-success ">Submit</button>
             <br>
             </div>            </form>
