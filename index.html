@@ -463,13 +463,15 @@ $(function()
         });
 
 
-                    $.ajax({
+          $.ajax({
                 type: "POST",
                 url: 'https://jetplan.trial.rocks/handler.php',
                 data: $form.serialize(),
                 success: after_form_submitted,
                 dataType: 'json'
             });
+                  return false;
+
 
       });
 });
