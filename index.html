@@ -32,6 +32,49 @@
   }
 </style>
 <script type="text/javascript">
+            function setCookie(c_name,value,exdays)
+          {
+          var exdate=new Date();
+          exdate.setDate(exdate.getDate() + exdays);
+          var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
+          document.cookie=c_name + "=" + c_value;
+          }
+
+          //check for the cookie when user first arrives, if cookie doesn't exist call the intro.
+          function getCookie(c_name)
+          {
+          var c_value = document.cookie;
+          var c_start = c_value.indexOf(" " + c_name + "=");
+          if (c_start == -1)
+            {
+            c_start = c_value.indexOf(c_name + "=");
+            }
+          if (c_start == -1)
+            {
+            c_value = null;
+            }
+          else
+            {
+            c_start = c_value.indexOf("=", c_start) + 1;
+            var c_end = c_value.indexOf(";", c_start);
+            if (c_end == -1)
+            {
+          c_end = c_value.length;
+          }
+          c_value = unescape(c_value.substring(c_start,c_end));
+          }
+          return c_value;
+          }
+          function checkCookieIntro(){
+             var cookie=getCookie("logbook");
+
+             if (cookie==null || cookie=="") {
+                setCookie("logbook", "1",90);
+                introJs().start();
+                }
+          }
+</script>
+<script type="text/javascript">
 function pwd_handler(form)
 {
         if (form.pwd.value != '')
@@ -322,47 +365,7 @@ function pwd_handler(form)
   <script type="text/javascript">
     $(document).ready(function(){
         //set the cookie when they first hit the site
-          function setCookie(c_name,value,exdays)
-          {
-          var exdate=new Date();
-          exdate.setDate(exdate.getDate() + exdays);
-          var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
-          document.cookie=c_name + "=" + c_value;
-          }
 
-          //check for the cookie when user first arrives, if cookie doesn't exist call the intro.
-          function getCookie(c_name)
-          {
-          var c_value = document.cookie;
-          var c_start = c_value.indexOf(" " + c_name + "=");
-          if (c_start == -1)
-            {
-            c_start = c_value.indexOf(c_name + "=");
-            }
-          if (c_start == -1)
-            {
-            c_value = null;
-            }
-          else
-            {
-            c_start = c_value.indexOf("=", c_start) + 1;
-            var c_end = c_value.indexOf(";", c_start);
-            if (c_end == -1)
-            {
-          c_end = c_value.length;
-          }
-          c_value = unescape(c_value.substring(c_start,c_end));
-          }
-          return c_value;
-          }
-          function checkCookieIntro(){
-             var cookie=getCookie("logbook");
-
-             if (cookie==null || cookie=="") {
-                setCookie("logbook", "1",90);
-                introJs().start();
-                }
-          }
 
         $('#service').change(function(){
         var id=$('#service option:selected').attr('id');
