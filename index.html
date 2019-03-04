@@ -427,16 +427,19 @@ function pwd_handler(form)
                 data: $form.serialize(),
                 dataType: 'json'
             }).done(function(data){
+              console.log("im done");
             $('form#reused_form').hide();
             $('#success_message').show();
             $('#error_message').hide();
              
-        });
+        }).fail(function() {
+            alert( "Posting failed." );  
+        });;
           return false;
 
 
       });
-  
+
 
     });
 
