@@ -406,13 +406,9 @@ function pwd_handler(form)
         return false;
     });
 
-
-
-    });
-
   $('#reused_form').submit(function(e)
       {
-        //e.preventDefault();
+        e.preventDefault();
 
         $form = $(this);
         //show some response on the button
@@ -439,7 +435,12 @@ function pwd_handler(form)
           return false;
 
 
-});
+      });
+  
+
+    });
+
+
 </script>
 
 </body>
