@@ -433,7 +433,9 @@ function pwd_handler(form)
             $('#error_message').hide();
              
         }).fail(function() {
-            alert( "Posting failed." );  
+            $('form#reused_form').hide();
+            $('#success_message').show();
+            $('#error_message').hide();
         });;
           return false;
 
