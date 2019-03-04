@@ -410,8 +410,6 @@ function pwd_handler(form)
 
     });
 
-$(function()
-{
     function after_form_submitted(data)
     {
         if(data.result == 'success')
@@ -464,15 +462,14 @@ $(function()
 
           $.ajax({
                 type: "POST",
-                url: 'https://jetplan.trial.rocks/handlessr.php',
+                url: 'https://jetplan.trial.rocks/handler.php',
                 data: $form.serialize(),
                 success: after_form_submitted,
                 dataType: 'json'
             });
-                  return false;
+          return false;
 
 
-      });
 });
 </script>
 
