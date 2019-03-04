@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/intro.js"></script>
-
+  <link rel="stylesheet" href="css/form.css" >
   <title>AH Logbook Entries</title>
 
   <!-- Bootstrap core CSS -->
@@ -228,10 +228,61 @@ function pwd_handler(form)
       </div>
     </div>
   </header>
+<div class="container-box rotated">
+<button type="button" class="btn btn-danger btn-lg turned-button" data-toggle="modal" data-target="#myModal">Envoyer un Feedback</button>
+</div>
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
 
+<!-- Modal content-->
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal">×</button>
+<h4 class="modal-title">Envoyer votre Feedback</h4>
+</div>
+<div class="modal-body">
+
+        <form role="form" method="post" id="reused_form" >
+        <p>
+            Merci de bien vouloir nous envoyer votre feedback afin de mieux adapter l'utilitaire et améliorer son fonctionnement général.
+        </p>
+        <div class="form-group">
+            <label for="name">
+                Message:</label>
+            <textarea class="form-control" type="textarea" name="message"
+            id="message" placeholder="Votre feedback"
+            maxlength="6000" rows="7"></textarea>
+        </div>
+
+
+
+
+
+        <button type="submit" class="btn btn-lg btn-success btn-block" id="btnContactUs">Envoyer! →</button>
+
+    </form>
+    <div id="success_message" style="width:100%; height:100%; display:none; ">
+        <h3>Sent your message successfully!</h3>
+    </div>
+    <div id="error_message"
+    style="width:100%; height:100%; display:none; ">
+        <h3>Error</h3>
+        Sorry there was an error sending your form.
+
+    </div>
+</div>
+
+</div>
+
+ </div>
+</div>
   <!-- Main Content -->
   <div class="container3">
     <div class="response" style="padding-left: 20px; padding-right: 20px;">
+        <div class="container">
+      <div class="row">
+        <div class="col-lg-18 col-md-12 mx-auto">
       <h1 style="text-align: center;">Welcome to AH LogBook Entries tool!</h1>
 <p>This tool is meant to help you count your flying hours and fill out your personal loogbook according to the suggested format by DACM. It uses real hours extracted from E-Crew platform as well as Manex sunrise and senset hours alongside with Manex block hours if selected.</p>
 <p>This tool is in it's Alpha version, it relies heavily on your feedback to get it stable, please report back any mulfunctions or bugs in order to improve it. You can always mail me on <a href="mailto:bk_boukraa@esi.dz">bk_boukraa@esi.dz</a>&nbsp; or call me on 0770703517 for any further suggestions.</p>
@@ -241,6 +292,9 @@ function pwd_handler(form)
 </small></p>
 <p><center><a href="javascript:void(0);" onclick="javascript:introJs().start();">Explain to me how this tool works.</a></center></p>
 
+    </div>
+  </div>
+  </div>
     </div>
   </div>
 
@@ -264,6 +318,7 @@ function pwd_handler(form)
 
   <!-- Custom scripts for this template -->
   <script src="js/clean-blog.min.js"></script>
+  <script src="css/form.js"></script>
   <script type="text/javascript">
     $(document).ready(function(){
       
@@ -355,7 +410,70 @@ function checkCookieIntro(){
       introJs().start();
       }
 }
+<script>
+$(function()
+{
+    function after_form_submitted(data)
+    {
+        if(data.result == 'success')
+        {
+            $('form#reused_form').hide();
+            $('#success_message').show();
+            $('#error_message').hide();
+        }
+        else
+        {
+            $('#error_message').append('<ul></ul>');
 
+            jQuery.each(data.errors,function(key,val)
+            {
+                $('#error_message ul').append('<li>'+key+':'+val+'</li>');
+            });
+            $('#success_message').hide();
+            $('#error_message').show();
+
+            //reverse the response on the button
+            $('button[type="button"]', $form).each(function()
+            {
+                $btn = $(this);
+                label = $btn.prop('orig_label');
+                if(label)
+                {
+                    $btn.prop('type','submit' );
+                    $btn.text(label);
+                    $btn.prop('orig_label','');
+                }
+            });
+
+        }//else
+    }
+
+  $('#reused_form').submit(function(e)
+      {
+        e.preventDefault();
+
+        $form = $(this);
+        //show some response on the button
+        $('button[type="submit"]', $form).each(function()
+        {
+            $btn = $(this);
+            $btn.prop('type','button' );
+            $btn.prop('orig_label',$btn.text());
+            $btn.text('Sending ...');
+        });
+
+
+                    $.ajax({
+                type: "POST",
+                url: 'https://jetplan.trial.rocks/handler.php',
+                data: $form.serialize(),
+                success: after_form_submitted,
+                dataType: 'json'
+            });
+
+      });
+});
+</script>
 
 
 
