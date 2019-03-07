@@ -409,7 +409,7 @@ function pwd_handler(form)
 
 
   $('#logbook').submit(function(){
-        $('.response').html("<h2><center>Loading your logbook entries...</b></center></h2><small><center>This may take up to two minutes in some cases, please be patient.</center></small><small><center><span class='js-timeout'>2:00</span></center></small>");
+        $('.response').html("<h2><center>Loading your logbook entries...</b></center></h2><small><center>This may take up to two minutes in some cases, please be patient.</center></small><h5><small><center>Estimated remaining time: <span class='js-timeout'>2:00</span></center></small></h5>");
          countdown();
         if ($('.pwd').value != '')
         {
