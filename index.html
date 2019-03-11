@@ -409,7 +409,7 @@ function pwd_handler(form)
 
 
   $('#logbook').submit(function(){
-        $('.response').html("<h2><center>Loading your logbook entries...</b></center></h2><small><center>This may take up to two minutes in some cases, please be patient.</center></small><h5><center>Estimated remaining time: <span class='js-timeout'>2:00</span></center></h4>");
+        $('.response').html("<h2><center>Loading your logbook entries...</b></center></h2><small><center>This may take up to two minutes in some cases, please be patient. If you don't need to lookup for associated Pilot names of your flights, it's highly suggested to deselect 'Include Pilot names' in order to have quicker results.</center></small><h5><center>Estimated remaining time: <span class='js-timeout'>2:00</span></center></h4>");
          countdown();
         if ($('.pwd').value != '')
         {
