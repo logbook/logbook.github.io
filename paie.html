@@ -24,12 +24,7 @@
   <link href="css/clean-blog.min.css" rel="stylesheet">
   <link href="css/introjs.css" rel="stylesheet">
 <style type="text/css">
-  .initials{
-    display:ok;
-  }
-  .paie{
-    display:none;
-  }
+
 </style>
 <script type="text/javascript">
             function setCookie(c_name,value,exdays)
@@ -70,7 +65,6 @@
 
              if (cookie==null || cookie=="") {
                 setCookie("logbook", "1",90);
-                introJs().start();
                 }
           }
 </script>
@@ -164,54 +158,20 @@ function pwd_handler(form)
 
             <div style="clear: both"></div>
             <div class="form-group">
-                <label for="service">Service:</label>&nbsp;
-                <select data-step="6" data-intro="You can also select which operation you want to perform. Service Paie is in a trial phase for now." class="form-control" id="service" name="service">
-                  <option id="0">LogBook</option>
-                  <option id="1">Paie</option>
-                </select>
-            </div>&nbsp;&nbsp;
-            <div class="form-group">
-                <label for="pilotsnames">Include Pilot names:</label>&nbsp;
-                <label><input data-step="9" data-intro="Do you want to fetch pilots names? this may slow down the process for Captains." name="pilotsnames" type="checkbox"> </label>
-
-            </div>&nbsp;&nbsp;
-            <div class="form-group">
                 <label for="manexsun">Sunrise/set Manex:</label>&nbsp;
-                <label><input data-step="7" data-intro="Select whether you'de rather have real sunrise/sunset hours for your day/night hours or the fixed 05:30z/17:30z rule." name="manexsun" type="checkbox"> </label>
+                <label><input name="manexsun" type="checkbox"> </label>
 
             </div>&nbsp;&nbsp;
             <div class="form-group">
                 <label for="manexblo">Block Manex:</label>&nbsp;
                 <div class="checkbox">
-                <label><input data-step="8" data-intro="You can also compute your hours based on Block Manex (last version incorporated)." name="manexblo" type="checkbox"> </label>
+                <label><input name="manexblo" type="checkbox" checked> </label>
               </div>
             </div>&nbsp;&nbsp;
-            <br>
-            <br>
-          </div>
-            <div class="form-inline initials text-center justify-content-center" style="padding-bottom:11px" >
-            <div style="clear: both"></div>
-             <div class="form-group">
-                <label data-step="10" data-intro="Optionally. You can introduce your initial totals in order to start counting up from them."  for="crewid">Total:</label>&nbsp;
-                <input type="text" value="00" style="width: 60px" class="form-control input-sm" name="total_h">:
-                <input type="text" value="00" style="width: 45px" class="form-control input-sm" name="total_m">
-              </div>&nbsp;&nbsp;
-             <div class="form-group">
-                <label for="crewid">Day:</label>&nbsp;
-                <input type="text" value="00" style="width: 60px" class="form-control input-sm" name="day_h">:
-                <input type="text" value="00" style="width: 45px" class="form-control input-sm" name="day_m">
-              </div>&nbsp;&nbsp;
-             <div class="form-group">
-                <label for="crewid">Night:</label>&nbsp;
-                <input type="text" value="00" style="width: 60px" class="form-control input-sm" name="night_h">:
-                <input type="text" value="00" style="width: 45px" class="form-control input-sm" name="night_m">
-              </div>&nbsp;&nbsp;
-             <div class="form-group">
-                <label for="crewid">IFR:</label>&nbsp;
-                <input type="text" value="00" style="width: 60px" class="form-control input-sm" name="ifr_h">:
-                <input type="text" value="00" style="width: 45px" class="form-control input-sm" name="ifr_m">
-              </div>&nbsp;&nbsp;
             <button data-step="11" data-intro="You're all set, happy using :)"  type="submit" class="btn btn-success ">Submit</button>
+
+            <br>
+            <br>
           </div>
             <div style="clear: both"></div>
           
@@ -370,22 +330,6 @@ function pwd_handler(form)
     $(document).ready(function(){
         //set the cookie when they first hit the site
 
-
-        $('#service').change(function(){
-        var id=$('#service option:selected').attr('id');
-
-        if (id==0) {
-          $('.paie').hide();
-          $('.site-heading').fadeIn().css('padding', '80px 0 0px 0');
-        }else{
-          $('.paie').fadeIn().css('display', 'flex');
-          $('.site-heading').fadeIn().css('padding', '80px 0 20px 0');
-
-
-          //$('.paie').show();
-        }
-
-      });
     var interval;
 
 
