@@ -402,6 +402,9 @@ function pwd_handler(form)
         })
         .done(function(data){
             $('.response').html(data);
+             $(document).ready(function() {
+                $('#calx_form').calx();
+             });
              
         })
         .fail(function() {
