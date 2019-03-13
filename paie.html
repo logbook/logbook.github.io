@@ -85,7 +85,7 @@ function pwd_handler(form)
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-      <img src="img/logo.png" style="width: 46px;"><a style="padding-left: 11px;" class="navbar-brand" data-intro="Welcome to AH Salary Checker Too Tool!" href="index.html">AH Salary Checker Tool</a>
+      <img src="img/logo.png" style="width: 46px;"><a style="padding-left: 11px;" class="navbar-brand" data-intro="Welcome to AH Salary Checker Too Tool!" href="paie.html">AH Salary Checker Tool</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars"></i>
@@ -179,16 +179,12 @@ function pwd_handler(form)
             <div style="clear: both"></div>
           
             <div class="form-inline paie text-center justify-content-center" >
-              <div class="form-group">
-                <label for="alerte_n_d">Alertes non délenchées:</label>&nbsp;
-                <select class="form-control" id="alerte_n_d" name="alerte_n_d">
-                  <option>0</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                </select>
-              </div>&nbsp;&nbsp;
+            <div class="form-group">
+                <label for="prime">Prime Voiture?</label>&nbsp;
+                <div class="checkbox">
+                <label><input name="prime" type="checkbox" checked> </label>
+              </div>
+            </div>&nbsp;&nbsp;
               <div class="form-group">
                 <label for="alerte_d">Alertes délenchées:</label>&nbsp;
                 <select class="form-control" id="alerte_d" name="alerte_d">
