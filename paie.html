@@ -171,6 +171,12 @@ function pwd_handler(form)
                 <label><input name="manexblo" type="checkbox" checked> </label>
               </div>
             </div>&nbsp;&nbsp;
+            <div class="form-group">
+                <label for="prime">Prime Voiture?</label>&nbsp;
+                <div class="checkbox">
+                <label><input name="prime" type="checkbox" checked> </label>
+              </div>
+            </div>&nbsp;&nbsp;
             <button data-step="11" data-intro="You're all set, happy using :)"  type="submit" class="btn btn-success ">Submit</button>
 
             <br>
@@ -179,12 +185,11 @@ function pwd_handler(form)
             <div style="clear: both"></div>
           
             <div class="form-inline paie text-center justify-content-center" >
+
             <div class="form-group">
-                <label for="prime">Prime Voiture?</label>&nbsp;
-                <div class="checkbox">
-                <label><input name="prime" type="checkbox" checked> </label>
-              </div>
-            </div>&nbsp;&nbsp;
+                <label for="cngtaux">Congé Payé Taux Annuel:</label>&nbsp;
+                <input type="text" placeholder="1000.00" style="width: 145px" class="form-control input-sm" id="cngtaux" name="cngtaux" required="required">
+              </div>&nbsp;&nbsp;
               <div class="form-group">
                 <label for="alerte_d">Alertes délenchées:</label>&nbsp;
                 <select class="form-control" id="alerte_d" name="alerte_d">
