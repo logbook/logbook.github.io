@@ -78,6 +78,15 @@ function pwd_handler(form)
         }
 }
 </script>
+<script language="javascript" type="text/javascript">
+function printerDiv() {
+  var divElements = document.getElementById("response").innerHTML;
+  var oldPage = document.body.innerHTML;
+  document.body.innerHTML = "<html><head><title></title></head><body>" + divElements + "</body>";
+  window.print();
+  document.body.innerHTML = oldPage;
+}
+</script>
 </head>
 
 <body id="calx_form" style="font-family: 'Montserrat'" onload="checkCookieIntro()">
@@ -244,7 +253,6 @@ function pwd_handler(form)
     style="width:100%; height:100%; display:none; ">
         <h3>Error</h3>
         Sorry there was an error sending your form.
-
     </div>
 </div>
 
@@ -254,19 +262,18 @@ function pwd_handler(form)
 </div>
   <!-- Main Content -->
   <div class="container3">
-    <div class="response" style="padding-left: 20px; padding-right: 20px;">
+    <div id="response" class="response" style="padding-left: 20px; padding-right: 20px;">
         <div class="container">
       <div class="row">
         <div class="col-lg-18 col-md-12 mx-auto">
       <h1 style="text-align: center;">Welcome to AH Salary Checker Too!</h1>
 <p></p>
 
-</small></p>
-
     </div>
   </div>
   </div>
     </div>
+    <center><input type="button" value="Print the output" onclick="javascript:printerDiv('printablediv')" /></center>
   </div>
 
   <hr>
