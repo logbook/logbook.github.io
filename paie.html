@@ -122,6 +122,23 @@ function pwd_handler(form)
                <input type="hidden" name="md5pwd" value="" />
               </div>&nbsp;&nbsp;
               <div class="form-group">
+                <label for="manexblo">Block Manex:</label>&nbsp;
+                <div class="checkbox">
+                <label><input name="manexblo" type="checkbox" checked> </label>
+              </div>
+            </div>&nbsp;&nbsp;
+            <div class="form-group">
+                <label for="prime">Prime Voiture?</label>&nbsp;
+                <div class="checkbox">
+                <label><input name="prime" type="checkbox" checked> </label>
+              </div>
+            </div>&nbsp;&nbsp;
+            <br>
+            </div>
+            <div class="form-inline text-center justify-content-center" style="padding-bottom:6px" >
+
+            <div style="clear: both"></div>
+            <div class="form-group">
                 <label for="month">Month:</label>&nbsp;
                 <select data-step="4" data-intro="Then select the requested month" class="form-control" id="month" name="month">
                   <option>JAN (For Flying Hours of NOV)</option>
@@ -155,28 +172,6 @@ function pwd_handler(form)
                   <option>2008</option>
                 </select>
               </div>&nbsp;&nbsp;
-            <br>
-            </div>
-            <div class="form-inline text-center justify-content-center" style="padding-bottom:6px" >
-
-            <div style="clear: both"></div>
-            <div class="form-group">
-                <label for="manexsun">Sunrise/set Manex:</label>&nbsp;
-                <label><input name="manexsun" type="checkbox"> </label>
-
-            </div>&nbsp;&nbsp;
-            <div class="form-group">
-                <label for="manexblo">Block Manex:</label>&nbsp;
-                <div class="checkbox">
-                <label><input name="manexblo" type="checkbox" checked> </label>
-              </div>
-            </div>&nbsp;&nbsp;
-            <div class="form-group">
-                <label for="prime">Prime Voiture?</label>&nbsp;
-                <div class="checkbox">
-                <label><input name="prime" type="checkbox" checked> </label>
-              </div>
-            </div>&nbsp;&nbsp;
             <button data-step="11" data-intro="You're all set, happy using :)"  type="submit" class="btn btn-success ">Submit</button>
 
             <br>
