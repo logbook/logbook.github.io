@@ -152,7 +152,7 @@ function printerDiv() {
                 <select data-step="4" data-intro="Then select the requested month" class="form-control" id="month" name="month">
                   <option>JAN (For Flying Hours of NOV)</option>
                   <option>FEB (For Flying Hours of DEC)</option>
-                  <option>MAR (For Flying Hours of JAN)</option>
+                  <option selected="selected">MAR (For Flying Hours of JAN)</option>
                   <option>APR (For Flying Hours of FEB)</option>
                   <option>MAY (For Flying Hours of MAR)</option>
                   <option>JUN (For Flying Hours of APR)</option>
@@ -181,8 +181,13 @@ function printerDiv() {
                   <option>2008</option>
                 </select>
               </div>&nbsp;&nbsp;
-            <button data-step="11" data-intro="You're all set, happy using :)"  type="submit" class="btn btn-success ">Submit</button>
-
+              <div class="form-group">
+                <label for="manex">Version Manex:</label>&nbsp;
+                <select class="form-control" id="manex" name="manex">
+                  <option>Ed03 Rev01 May 2018</option>
+                  <option>Ed02 Rev06 June 2014</option>
+                </select>
+              </div>&nbsp;&nbsp;
             <br>
             <br>
           </div>
@@ -204,6 +209,7 @@ function printerDiv() {
                   <option>4</option>
                 </select>
               </div>&nbsp;&nbsp;
+            <button data-step="11" data-intro="You're all set, happy using :)"  type="submit" class="btn btn-success ">Submit</button>
             </div>
             </form>
           </div>
