@@ -1062,6 +1062,7 @@ select#soflow, select#soflow-color {
     background-color: #D6D4CA;
     background-position: 97% center;
     background-repeat: no-repeat;
+    margin-left: 50px;
     border: 0px solid #AAA;
     color: black;
     font-size: inherit;
