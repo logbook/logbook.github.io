@@ -1050,7 +1050,7 @@ select {
   text-align-last: center;
 }
 option {
-  text-align: left;
+  text-align: center;
 }
 select#soflow, select#soflow-color {
     -webkit-appearance: button;
