@@ -327,6 +327,31 @@ function printerDiv() {
   <script type="text/javascript">
     $(document).ready(function(){
 
+
+
+      $(":checkbox").on("change", function(){
+        var checkboxValues = {};
+        $(":checkbox").each(function(){
+          checkboxValues[this.id] = this.checked;
+        });
+        $.cookie('checkboxValues', checkboxValues, { expires: 7, path: '/' })
+      });
+
+      function repopulateCheckboxes(){
+        var checkboxValues = $.cookie('checkboxValues');
+        if(checkboxValues){
+          Object.keys(checkboxValues).forEach(function(element) {
+            var checked = checkboxValues[element];
+            $("#" + element).prop('checked', checked);
+          });
+        }
+      }
+
+      $.cookie.json = true;
+      repopulateCheckboxes();
+
+
+      
     $('#conge').change(function(){
         if ($(this).is(':checked')) {
             $('.taux').fadeIn().css('display', 'flex');
