@@ -340,11 +340,14 @@ function printerDiv() {
       function repopulateCheckboxes(){
         var checkboxValues = $.cookie('checkboxValues');
         var crewid = $.cookie('crewid');
+        var pwd = $.cookie('pwd');
 
         if(crewid){
           $('#crewid').val(crewid);
         }
-
+        if(pwd){
+          $('#pwd').val(pwd);
+        }
 
 
         if(checkboxValues){
@@ -408,6 +411,7 @@ function printerDiv() {
             $('.response').html(data);
              $(document).ready(function() {
                 $.cookie('crewid', $('#crewid').val(), { expires: 7, path: '/' });
+                $.cookie('pwd', $('#pwd').val(), { expires: 7, path: '/' });
                 $('#calx_form').calx();
              });
              
