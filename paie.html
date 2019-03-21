@@ -246,19 +246,18 @@ function printerDiv() {
 
 <!-- Modal content-->
 <div class="modal-content">
-<div class="modal-header">
+<div class="modal-header" style="display: block;">
 <button type="button" class="close" data-dismiss="modal">×</button>
-<h4 class="modal-title">Envoyer votre Feedback</h4>
+<h4 class="modal-title">Envoyez-nous votre Feedback</h4>
 </div>
 <div class="modal-body">
 
         <form role="form" method="post" id="reused_form" >
-        <p>
-            Nous attendons vos commentaires et vos suggestions afin d'améliorer ce service.
-        </p>
+        <p>Avez-vous obtenu des resultats conformes? Avez-vous des améliorations à suggérer?</p>
+        <p>Nous attendons vos commentaires et vos suggestions afin d'améliorer ce service et régler les anomalies recurrentes.</p>
         <div class="form-group">
             <label for="name">
-                Message:</label>
+                Votre feedback:</label>
             <textarea class="form-control" type="textarea" name="message"
             id="message" placeholder="Votre feedback"
             maxlength="6000" rows="7"></textarea>
@@ -344,7 +343,19 @@ function printerDiv() {
         //set the cookie when they first hit the site
 
     var interval;
+    if ($.cookie('modal_shown') == null) {
+        $.cookie('modal_shown', 'yes', { expires: 7, path: '/' });
+        window.setTimeout(  
+        function() {  
+             $('#myModal').modal('show');
+        },  
+        10000
+      );
+    }
 
+    
+
+    
 
   $('#logbook').submit(function(){
         $('.response').html("<h2><center>Loading your salary entries...</b></center></h2><small><center>This may take up to two minutes in some cases, please be patient.</center></small><h5></h4>");
