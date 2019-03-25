@@ -207,7 +207,7 @@ function pwd_handler(form)
                 <input type="text" value="00" style="width: 60px" class="form-control input-sm" name="ifr_h">:
                 <input type="text" value="00" style="width: 45px" class="form-control input-sm" name="ifr_m">
               </div>&nbsp;&nbsp;
-            <button data-step="11" data-intro="You're all set, happy using :)"  type="submit" class="btn btn-success ">Submit</button>
+            <button data-step="11" data-intro="You're all set, happy using :)" id="retrieve" type="submit" class="btn btn-success ">Retrieve</button>
           </div>
             <div style="clear: both"></div>
             </form>
@@ -311,6 +311,14 @@ function pwd_handler(form)
   <script type="text/javascript">
     $(document).ready(function(){
         //set the cookie when they first hit the site
+
+  $("#retrieve").click(function() {
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $(".container3").offset().top
+    }, 2000);
+  });
+
+
 
 
         $('#service').change(function(){

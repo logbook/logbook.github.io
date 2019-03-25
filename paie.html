@@ -27,6 +27,7 @@
 
 </style>
 <script type="text/javascript">
+
             function setCookie(c_name,value,exdays)
           {
           var exdate=new Date();
@@ -229,7 +230,7 @@ function printerDiv() {
                   <option>4</option>
                 </select>
               </div>&nbsp;&nbsp;
-            <button type="submit" class="btn btn-success ">Submit</button>
+            <button type="submit" id="retrieve" class="btn btn-success ">Retrieve</button>
             </div>
             <div class="form-inline taux text-center justify-content-center" style="    padding-top: 18px;display: none">
               <div class="form-group">
@@ -332,6 +333,14 @@ function printerDiv() {
   <script src="css/form.js"></script>
   <script type="text/javascript">
     $(document).ready(function(){
+
+
+  $("#retrieve").click(function() {
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $(".container3").offset().top
+    }, 2000);
+  });
+
 
 
 
