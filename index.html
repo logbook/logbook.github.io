@@ -411,7 +411,15 @@ function pwd_handler(form)
 
 
 </script>
-
+<script language="javascript" type="text/javascript">
+function printerDiv() {
+  var divElements = document.getElementById("response").innerHTML;
+  var oldPage = document.body.innerHTML;
+  document.body.innerHTML = "<html><head><title></title></head><body>" + divElements + "</body>";
+  window.print();
+  document.body.innerHTML = oldPage;
+}
+</script>
 </body>
 
 </html>
