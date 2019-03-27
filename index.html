@@ -376,6 +376,7 @@ function pwd_handler(form)
         })
         .done(function(data){
             $('.response').html(data);
+            clearInterval(interval);
              
         })
         .fail(function() {
