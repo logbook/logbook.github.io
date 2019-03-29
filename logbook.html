@@ -9,7 +9,7 @@
   <meta name="author" content="">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/intro.js"></script>
   <link rel="stylesheet" href="css/form.css" >
-  <title>AH Salary Checker Tool</title>
+  <title>AH Logbook Entries</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -24,10 +24,14 @@
   <link href="css/clean-blog.min.css" rel="stylesheet">
   <link href="css/introjs.css" rel="stylesheet">
 <style type="text/css">
-
+  .initials{
+    display:ok;
+  }
+  .paie{
+    display:none;
+  }
 </style>
 <script type="text/javascript">
-
             function setCookie(c_name,value,exdays)
           {
           var exdate=new Date();
@@ -66,6 +70,7 @@
 
              if (cookie==null || cookie=="") {
                 setCookie("logbook", "1",90);
+                introJs().start();
                 }
           }
 </script>
@@ -79,23 +84,14 @@ function pwd_handler(form)
         }
 }
 </script>
-<script language="javascript" type="text/javascript">
-function printerDiv() {
-  var divElements = document.getElementById("response").innerHTML;
-  var oldPage = document.body.innerHTML;
-  document.body.innerHTML = "<html><head><title></title></head><body>" + divElements + "</body>";
-  window.print();
-  document.body.innerHTML = oldPage;
-}
-</script>
 </head>
 
-<body id="calx_form" style="font-family: 'Montserrat'" onload="checkCookieIntro()">
+<body style="font-family: 'Montserrat'" onload="checkCookieIntro()">
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-      <img src="img/logo.png" style="width: 46px;"><a style="padding-left: 11px;" class="navbar-brand" data-intro="Welcome to AH Salary Checker Too Tool!" href="paie.html">AH Salary Checker Tool</a>
+      <img src="img/logo.png" style="width: 46px;"><a style="padding-left: 11px;" class="navbar-brand" data-intro="Welcome to AH Logbook Entries Tool!" href="logbook.html">AH Logbook Entries</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars"></i>
@@ -103,7 +99,7 @@ function printerDiv() {
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="logbook.html">→ LogBook Entries tool</a>
+            <a class="nav-link" href="paie.html"><h5>→ PAIE CHECKER TOOL</h5></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="attest.html">→ Attestation Heures de vol</a>
@@ -132,37 +128,20 @@ function printerDiv() {
                <input type="hidden" name="md5pwd" value="" />
               </div>&nbsp;&nbsp;
               <div class="form-group">
-                <label for="manexblo">Block Manex?</label>&nbsp;
-                <div class="checkbox">
-                <label><input name="manexblo" id="manexblo" type="checkbox" checked> </label>
-              </div>
-            </div>&nbsp;&nbsp;
-            <div class="form-group">
-                <label for="prime">Prime Voiture?</label>&nbsp;
-                <div class="checkbox">
-                <label><input name="prime" id="prime" type="checkbox" checked> </label>
-              </div>
-            </div>&nbsp;&nbsp;
-            <br>
-            </div>
-            <div class="form-inline text-center justify-content-center" style="padding-bottom:6px" >
-
-            <div style="clear: both"></div>
-            <div class="form-group">
                 <label for="month">Month:</label>&nbsp;
                 <select data-step="4" data-intro="Then select the requested month" class="form-control" id="month" name="month">
-                  <option>JAN (For Flying Hours of NOV)</option>
-                  <option>FEB (For Flying Hours of DEC)</option>
-                  <option selected="selected">MAR (For Flying Hours of JAN)</option>
-                  <option>APR (For Flying Hours of FEB)</option>
-                  <option>MAY (For Flying Hours of MAR)</option>
-                  <option>JUN (For Flying Hours of APR)</option>
-                  <option>JUL (For Flying Hours of MAY)</option>
-                  <option>AUG (For Flying Hours of JUN)</option>
-                  <option>SEP (For Flying Hours of JUL)</option>
-                  <option>OCT (For Flying Hours of AUG)</option>
-                  <option>NOV (For Flying Hours of SEP)</option>
-                  <option>DEC (For Flying Hours of OCT)</option>
+                  <option>JAN</option>
+                  <option>FEB</option>
+                  <option>MAR</option>
+                  <option>APR</option>
+                  <option>MAY</option>
+                  <option>JUN</option>
+                  <option>JUL</option>
+                  <option>AUG</option>
+                  <option>SEP</option>
+                  <option>OCT</option>
+                  <option>NOV</option>
+                  <option>DEC</option>
                 </select>
               </div>&nbsp;&nbsp;
             <div class="form-group">
@@ -182,61 +161,55 @@ function printerDiv() {
                   <option>2008</option>
                 </select>
               </div>&nbsp;&nbsp;
-              <div class="form-group">
-                <label for="manex">Version Manex:</label>&nbsp;
-                <select class="form-control" id="manex" name="manex">
-                  <option>2014</option>
-                  <option>2018</option>
-                </select>
-              </div>&nbsp;&nbsp;
-              <div class="form-group">
-                <label for="assperte">Ass Pert Lics?</label>&nbsp;
+            <br>
+            </div>
+            <div class="form-inline text-center justify-content-center" style="padding-bottom:6px" >
+
+            <div style="clear: both"></div>
+            <div class="form-group">
+                <label for="pilotsnames">Include Pilot names:</label>&nbsp;
+                <label><input data-step="9" data-intro="Do you want to fetch pilots names? this may slow down the process for Captains." name="pilotsnames" type="checkbox"> </label>
+
+            </div>&nbsp;&nbsp;
+            <div class="form-group">
+                <label for="manexsun">Sunrise/set Manex:</label>&nbsp;
+                <label><input data-step="7" data-intro="Select whether you'de rather have real sunrise/sunset hours for your day/night hours or the fixed 05:30z/17:30z rule." name="manexsun" type="checkbox" checked="checked"> </label>
+
+            </div>&nbsp;&nbsp;
+            <div class="form-group">
+                <label for="manexblo">Block Manex:</label>&nbsp;
                 <div class="checkbox">
-                <label><input name="assperte" id="assperte" value="assperte" type="checkbox" checked="checked"> </label>
+                <label><input data-step="8" data-intro="You can also compute your hours based on Block Manex (last version incorporated)." name="manexblo" type="checkbox"> </label>
               </div>
             </div>&nbsp;&nbsp;
             <br>
             <br>
           </div>
+            <div class="form-inline initials text-center justify-content-center" style="padding-bottom:11px" >
             <div style="clear: both"></div>
-          
-            <div class="form-inline paie text-center justify-content-center" >
-            <div class="form-group">
-                <label for="instructeur">Instructeur?</label>&nbsp;
-                <div class="checkbox">
-                <label><input name="instructeur" id="instructeur" value="instructeur" type="checkbox"> </label>
-              </div>
-            </div>&nbsp;&nbsp;
-            <div class="form-group">
-                <label for="plpratique">PL Pratique?</label>&nbsp;
-                <div class="checkbox">
-                <label><input name="plpratique" id="plpratique" value="plpratique" type="checkbox"> </label>
-              </div>
-            </div>&nbsp;&nbsp;
-            <div class="form-group">
-                <label for="conge">Congés pris?</label>&nbsp;
-                <div class="checkbox">
-                <label><input id="conge" name="conge" type="checkbox"> </label>
-              </div>
-            </div>&nbsp;&nbsp;
-
-              <div class="form-group">
-                <label for="alerte_d">Alertes délenchées:</label>&nbsp;
-                <select class="form-control" id="alerte_d" name="alerte_d">
-                  <option>0</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                </select>
+             <div class="form-group">
+                <label data-step="10" data-intro="Optionally. You can introduce your initial totals in order to start counting up from them."  for="crewid">Total Initial:</label>&nbsp;
+                <input type="text" value="00" style="width: 60px" class="form-control input-sm" name="total_h">:
+                <input type="text" value="00" style="width: 45px" class="form-control input-sm" name="total_m">
               </div>&nbsp;&nbsp;
-            <button type="submit" id="retrieve" class="btn btn-success ">Retrieve</button>
-            </div>
-            <div class="form-inline taux text-center justify-content-center" style="    padding-top: 18px;display: none">
-              <div class="form-group">
-                <label for="cngtaux">Taux Annuel du Congé Payé (valeur journaliére):</label>&nbsp;
-                <input type="text" placeholder="10000.00" style="width: 145px" class="form-control input-sm" id="cngtaux" name="cngtaux" value="10000.00" required="required">
+             <div class="form-group">
+                <label for="crewid">Day:</label>&nbsp;
+                <input type="text" value="00" style="width: 60px" class="form-control input-sm" name="day_h">:
+                <input type="text" value="00" style="width: 45px" class="form-control input-sm" name="day_m">
               </div>&nbsp;&nbsp;
+             <div class="form-group">
+                <label for="crewid">Night:</label>&nbsp;
+                <input type="text" value="00" style="width: 60px" class="form-control input-sm" name="night_h">:
+                <input type="text" value="00" style="width: 45px" class="form-control input-sm" name="night_m">
+              </div>&nbsp;&nbsp;
+             <div class="form-group">
+                <label for="crewid">IFR:</label>&nbsp;
+                <input type="text" value="00" style="width: 60px" class="form-control input-sm" name="ifr_h">:
+                <input type="text" value="00" style="width: 45px" class="form-control input-sm" name="ifr_m">
+              </div>&nbsp;&nbsp;
+            <button data-step="11" data-intro="You're all set, happy using :)" id="retrieve" type="submit" class="btn btn-success ">Retrieve</button>
+          </div>
+            <div style="clear: both"></div>
             </form>
           </div>
         </div>
@@ -253,18 +226,19 @@ function printerDiv() {
 
 <!-- Modal content-->
 <div class="modal-content">
-<div class="modal-header" style="display: block;">
+<div class="modal-header">
 <button type="button" class="close" data-dismiss="modal">×</button>
-<h4 class="modal-title">Envoyez-nous votre Feedback</h4>
+<h4 class="modal-title">Envoyer votre Feedback</h4>
 </div>
 <div class="modal-body">
 
         <form role="form" method="post" id="reused_form" >
-        <p>Avez-vous obtenu des resultats conformes? Avez-vous des améliorations à suggérer?</p>
-        <p>Nous attendons vos commentaires et vos suggestions afin d'améliorer ce service et régler les anomalies recurrentes.</p>
+        <p>
+            Nous attendons vos commentaires et vos suggestions afin d'améliorer ce service.
+        </p>
         <div class="form-group">
             <label for="name">
-                Votre feedback:</label>
+                Message:</label>
             <textarea class="form-control" type="textarea" name="message"
             id="message" placeholder="Votre feedback"
             maxlength="6000" rows="7"></textarea>
@@ -284,6 +258,7 @@ function printerDiv() {
     style="width:100%; height:100%; display:none; ">
         <h3>Error</h3>
         Sorry there was an error sending your form.
+
     </div>
 </div>
 
@@ -297,14 +272,22 @@ function printerDiv() {
         <div class="container">
       <div class="row">
         <div class="col-lg-18 col-md-12 mx-auto">
-      <h1 style="text-align: center;">Welcome to AH Salary Checker Too!</h1>
-<p>Thanks for using this tool, Please help improve it by providing a feedback through the red button to the left (Envoyer votre Feedback).</p>
+      <h1 style="text-align: center;">Welcome to AH LogBook Entries tool!</h1>
+      <h6><center><a style="color:red" href="paie.html">If you are looking for the Salary Checker tool based on E-crew data please  click here</center></a></h6>
+<p>This tool is meant to help you count your flying hours and fill out your personal loogbook according to the suggested format by DACM. It uses real hours extracted from E-Crew platform as well as Manex sunrise and senset hours alongside with Manex block hours if selected.</p>
 <p>This tool is in it's Alpha version, it relies heavily on your feedback to get it stable, please report back any mulfunctions or bugs in order to improve it. You can always mail me on <a href="mailto:boukraa.kacem@airalgerie.dz">boukraa.kacem@airalgerie.dz</a>&nbsp; or call me on 0657641456 for any further suggestions.</p>
-<p>This tool does not provide any guarantee for the correct outputs, so it's suggested to check and crosscheck any output.</p>
+<p>This tool does not provide any guarantee for the correct totals, so it's suggested to check and crosscheck any output.</p>
+
+</small></p>
+<p><center><a href="javascript:void(0);" onclick="javascript:introJs().start();">Explain to me how this tool works.</a></center></p>
+
     </div>
   </div>
   </div>
     </div>
+  </div>
+  </div>
+  </div>
   </div>
 
   <hr>
@@ -315,7 +298,7 @@ function printerDiv() {
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
 
-          <p class="copyright text-muted">Data extracted from E-Crew platform, this service does not store any data or credentials. Use on your responsibility. Coded by <a href="https://www.linkedin.com/in/kacemboukraa/">Kacem BOUKRAA</a>, Form and formulas provided by Capt GOUAREF Hichem.</p>
+          <p class="copyright text-muted">Data extracted from E-Crew platform, this service does not store any data or credentials. Use on your responsibility. By <a href="https://www.linkedin.com/in/kacemboukraa/">Kacem BOUKRAA</a></p>
         </div>
       </div>
     </div>
@@ -323,17 +306,14 @@ function printerDiv() {
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/jquery/jquery.cookie.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="js/numeral.min.js"></script>
-<!-- the jquery calx lib -->
-<script src="js/jquery-calx-2.2.8.min.js"></script>
+
   <!-- Custom scripts for this template -->
   <script src="js/clean-blog.min.js"></script>
   <script src="css/form.js"></script>
   <script type="text/javascript">
     $(document).ready(function(){
-
+        //set the cookie when they first hit the site
 
   $("#retrieve").click(function() {
     $([document.documentElement, document.body]).animate({
@@ -344,73 +324,48 @@ function printerDiv() {
 
 
 
-      $(":checkbox").on("change", function(){
-        var checkboxValues = {};
-        $(":checkbox").each(function(){
-          checkboxValues[this.id] = this.checked;
-        });
-        $.cookie('checkboxValues', checkboxValues, { expires: 7, path: '/' })
-      });
+        $('#service').change(function(){
+        var id=$('#service option:selected').attr('id');
 
-      function repopulateCheckboxes(){
-        var checkboxValues = $.cookie('checkboxValues');
-        var crewid = $.cookie('crewid');
-        var pwd = $.cookie('pwd');
-
-        if(crewid){
-          $('#crewid').val(crewid);
-        }
-        if(pwd){
-          $('#pwd').val(pwd);
-        }
-
-
-        if(checkboxValues){
-          Object.keys(checkboxValues).forEach(function(element) {
-            var checked = checkboxValues[element];
-            $("#" + element).prop('checked', checked);
-          });
-        }
-      }
-
-      $.cookie.json = true;
-      repopulateCheckboxes();
-
-
-
-    $('#conge').change(function(){
-        if ($(this).is(':checked')) {
-            $('.taux').fadeIn().css('display', 'flex');
-          $('.site-heading').fadeIn().css('padding', '80px 0 25px 0');
+        if (id==0) {
+          $('.paie').hide();
+          $('.site-heading').fadeIn().css('padding', '80px 0 0px 0');
         }else{
-          $('.taux').hide();
-          $('.site-heading').fadeIn().css('padding', '80px 0 10px 0');
+          $('.paie').fadeIn().css('display', 'flex');
+          $('.site-heading').fadeIn().css('padding', '80px 0 20px 0');
+
+
+          //$('.paie').show();
         }
 
       });
-
-
-
-
-        //set the cookie when they first hit the site
-
     var interval;
-    if ($.cookie('modal_shown') == null) {
-        $.cookie('modal_shown', 'yes', { expires: 7, path: '/' });
-        window.setTimeout(  
-        function() {  
-             $('#myModal').modal('show');
-        },  
-        25000
-      );
+
+    function countdown() {
+      clearInterval(interval);
+      interval = setInterval( function() {
+          var timer = $('.js-timeout').html();
+          timer = timer.split(':');
+          var minutes = timer[0];
+          var seconds = timer[1];
+          seconds -= 1;
+          if (minutes < 0) return;
+          else if (seconds < 0 && minutes != 0) {
+              minutes -= 1;
+              seconds = 59;
+          }
+          else if (seconds < 10 && length.seconds != 2) seconds = '0' + seconds;
+
+          $('.js-timeout').html(minutes + ':' + seconds);
+
+          if (minutes == 0 && seconds == 0) clearInterval(interval);
+      }, 1000);
     }
 
-    
-
-    
 
   $('#logbook').submit(function(){
-        $('.response').html("<h2><center>Loading your salary entries...</b></center></h2><small><center>This may take up to two minutes in some cases, please be patient.</center></small><h5></h4>");
+        $('.response').html("<h2><center>Loading your logbook entries...</b></center></h2><small><center>This may take up to two minutes in some cases, please be patient.</center></small><small style='color:gray'><center> If you don't need to lookup for associated Pilot names of your flights, it's highly suggested to deselect 'Include Pilot names' in order to have quicker results.</center></small><h5><center>Estimated remaining time: <span class='js-timeout'>2:00</span></center></h4>");
+         countdown();
         if ($('.pwd').value != '')
         {
             $('.md5pwd').value = encodeURIComponent(window.btoa($('.pwd').value));
@@ -419,16 +374,12 @@ function printerDiv() {
         $.ajax({
 
             type: 'POST',
-            url: 'https://ahpaie.trial.rocks/logbook5.php', 
+            url: 'https://ahpaie.trial.rocks/logbook3.php', 
             data: $(this).find(':not(input[name=pwd])').serialize()
         })
         .done(function(data){
             $('.response').html(data);
-             $(document).ready(function() {
-                $.cookie('crewid', $('#crewid').val(), { expires: 7, path: '/' });
-                $.cookie('pwd', $('#pwd').val(), { expires: 7, path: '/' });
-                $('#calx_form').calx();
-             });
+            clearInterval(interval);
              
         })
         .fail(function() {
@@ -474,6 +425,15 @@ function printerDiv() {
   gtag('config', 'UA-137264541-1');
 </script>
 
+<script language="javascript" type="text/javascript">
+function printerDiv() {
+  var divElements = document.getElementById("response").innerHTML;
+  var oldPage = document.body.innerHTML;
+  document.body.innerHTML = "<html><head><title></title></head><body>" + divElements + "</body>";
+  window.print();
+  document.body.innerHTML = oldPage;
+}
+</script>
 </body>
 
 </html>
