@@ -10,6 +10,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/intro.js"></script>
   <link rel="stylesheet" href="css/form.css" >
   <title>AH Salary Checker Tool</title>
+  <script type='text/javascript' src="//wurfl.io/wurfl.js"></script>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -395,8 +396,12 @@ function printerDiv() {
         //set the cookie when they first hit the site
 
     var interval;
-    if ($.cookie('modal_shown') == null) {
-        $.cookie('modal_shown', 'yes', { expires: 7, path: '/' });
+    if ($.cookie('feedback_request') == null) {
+      if(WURFL.form_factor == "Smartphone"){
+        alert("You are using this website from a mobile, it's highly recommended for better viewing experience to use your tablet or Desktop. Otherwise use this website with a Landscape view.");
+      }
+
+        $.cookie('feedback_request', 'yes', { expires: 7, path: '/' });
         window.setTimeout(  
         function() {  
              $('#myModal').modal('show');
